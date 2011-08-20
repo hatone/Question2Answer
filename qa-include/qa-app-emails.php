@@ -1,5 +1,9 @@
 <?php
 
+/* 
+ * File modified by NoahY <noahy57@gmail.com> on 20.08.2011
+ */
+
 /*
 	Question2Answer 1.4.1 (c) 2011, Gideon Greenspan
 
@@ -99,6 +103,9 @@
 			$subs['^email']=$email;
 			$subs['^open']="\n";
 			$subs['^close']="\n";
+			
+			if(!isset($subs['^salutation']))
+				$subs['^salutation']=(empty($handle) ? '' : $handle.",\n\n");
 		
 			return qa_send_email(array(
 				'fromemail' => qa_opt('from_email'),
@@ -106,7 +113,7 @@
 				'toemail' => $email,
 				'toname' => $handle,
 				'subject' => strtr($subject, $subs),
-				'body' => (empty($handle) ? '' : $handle.",\n\n").strtr($body, $subs),
+				'body' => strtr($body, $subs),
 				'html' => false,
 			));
 		
