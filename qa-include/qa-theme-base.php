@@ -1222,7 +1222,7 @@
 		function post_disabled_button($post, $element, $value, $class)
 		{
 			if (isset($post[$element]))
-				$this->output('<INPUT '.$post[$element].' TYPE="submit" VALUE="'.$value.'" CLASS="'.$class.'-disabled" DISABLED="disabled"/> ');
+				$this->output('<INPUT '.$post[$element].' TYPE="button" VALUE="'.$value.'" CLASS="'.$class.'-disabled" /> ');
 		}
 		
 		function post_avatar($post, $class, $prefix=null)
