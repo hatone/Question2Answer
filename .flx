@@ -1,2 +1,12 @@
+#########################################
+#
+# fluxflex configuration for Question2Answer
+#
+#########################################
+
+[replace]
+./qa-config.php DUMMY_PROJECT_NAME PROJECT_NAME 
+./qa-config.php DUMMY_DB_HOST DB_HOST
+./qa-config.php DUMMY_DB_PASSWORD DB_PASSWORD
 [setup]
 ln -s . public_html
